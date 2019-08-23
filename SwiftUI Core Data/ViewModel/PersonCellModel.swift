@@ -73,7 +73,7 @@ struct PersonCellModel: View {
 struct PersonCellModel_Previews: PreviewProvider {
     static var previews: some View {
         PersonCellModel(
-            image: Image(uiImage: UIImage(systemName: "plus.circle")!),
+            image: Image(uiImage: UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
             favImage: Image(systemName: "star")
         )
     }

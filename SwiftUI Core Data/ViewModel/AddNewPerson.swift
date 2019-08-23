@@ -20,7 +20,7 @@ struct AddNewPerson: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: image ?? UIImage(systemName: "plus.circle")!)
+            Image(uiImage: image ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!)
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
@@ -59,7 +59,7 @@ struct AddNewPerson: View {
 
 struct AddNewPerson_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewPerson(image: .constant(UIImage(systemName: "plus.circle")),
+        AddNewPerson(image: .constant(UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))),
                      selectedSegment: .constant(0),
                      firstName: .constant("bob"),
                      lastName: .constant("rob"),

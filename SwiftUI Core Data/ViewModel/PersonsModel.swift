@@ -36,7 +36,7 @@ struct PersonsModel: View {
             List {
                 ForEach(persons, id: \.id) { person in
                     PersonCellModel(
-                        image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "plus.circle")!),
+                        image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
                         favImage: Image(systemName: person.isFavorite ? "star.fill" : "star"),
                         gender: person.gender ?? "...",
                         firstName: person.firstName ?? "...",
@@ -75,7 +75,7 @@ struct PersonsModel: View {
             self.firstName = ""
             self.lastName = ""
             self.age = ""
-            self.image = UIImage(systemName: "plus.circle")
+            self.image = UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))
             
         }) { AddNewPerson(image: self.$image,
                           selectedSegment: self.$selectedSegment,
