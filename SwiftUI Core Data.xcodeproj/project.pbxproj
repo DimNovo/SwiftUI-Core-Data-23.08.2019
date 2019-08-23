@@ -14,6 +14,12 @@
 		744749BD230FDBC000B701B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744749BC230FDBC000B701B4 /* Assets.xcassets */; };
 		744749C0230FDBC000B701B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744749BF230FDBC000B701B4 /* Preview Assets.xcassets */; };
 		744749C3230FDBC000B701B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744749C1230FDBC000B701B4 /* LaunchScreen.storyboard */; };
+		744749CC230FDC4000B701B4 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749CA230FDC4000B701B4 /* Person+CoreDataClass.swift */; };
+		744749CD230FDC4000B701B4 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749CB230FDC4000B701B4 /* Person+CoreDataProperties.swift */; };
+		744749D0230FDDBC00B701B4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749CF230FDDBC00B701B4 /* ImagePicker.swift */; };
+		744749D4230FE01C00B701B4 /* PersonCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749D3230FE01C00B701B4 /* PersonCellModel.swift */; };
+		744749D8230FE2D900B701B4 /* PersonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749D7230FE2D900B701B4 /* PersonsModel.swift */; };
+		744749DC230FFB1400B701B4 /* AddNewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749DB230FFB1400B701B4 /* AddNewPerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		744749BF230FDBC000B701B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		744749C2230FDBC000B701B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		744749C4230FDBC000B701B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		744749CA230FDC4000B701B4 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		744749CB230FDC4000B701B4 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		744749CF230FDDBC00B701B4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		744749D3230FE01C00B701B4 /* PersonCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellModel.swift; sourceTree = "<group>"; };
+		744749D7230FE2D900B701B4 /* PersonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsModel.swift; sourceTree = "<group>"; };
+		744749DB230FFB1400B701B4 /* AddNewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPerson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +72,14 @@
 			children = (
 				744749B3230FDBBE00B701B4 /* AppDelegate.swift */,
 				744749B5230FDBBE00B701B4 /* SceneDelegate.swift */,
-				744749BA230FDBBE00B701B4 /* ContentView.swift */,
+				744749CE230FDC5F00B701B4 /* Service+CoreData */,
+				744749D2230FDFDA00B701B4 /* Service+ImagePicker */,
+				744749D6230FE25D00B701B4 /* Model */,
+				744749D1230FDFCB00B701B4 /* View */,
+				744749D5230FE24F00B701B4 /* ViewModel */,
 				744749BC230FDBC000B701B4 /* Assets.xcassets */,
 				744749C1230FDBC000B701B4 /* LaunchScreen.storyboard */,
 				744749C4230FDBC000B701B4 /* Info.plist */,
-				744749B7230FDBBE00B701B4 /* SwiftUI_Core_Data.xcdatamodeld */,
 				744749BE230FDBC000B701B4 /* Preview Content */,
 			);
 			path = "SwiftUI Core Data";
@@ -76,6 +91,49 @@
 				744749BF230FDBC000B701B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		744749CE230FDC5F00B701B4 /* Service+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				744749CA230FDC4000B701B4 /* Person+CoreDataClass.swift */,
+				744749CB230FDC4000B701B4 /* Person+CoreDataProperties.swift */,
+			);
+			path = "Service+CoreData";
+			sourceTree = "<group>";
+		};
+		744749D1230FDFCB00B701B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				744749BA230FDBBE00B701B4 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		744749D2230FDFDA00B701B4 /* Service+ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				744749CF230FDDBC00B701B4 /* ImagePicker.swift */,
+			);
+			path = "Service+ImagePicker";
+			sourceTree = "<group>";
+		};
+		744749D5230FE24F00B701B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				744749D3230FE01C00B701B4 /* PersonCellModel.swift */,
+				744749D7230FE2D900B701B4 /* PersonsModel.swift */,
+				744749DB230FFB1400B701B4 /* AddNewPerson.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		744749D6230FE25D00B701B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				744749B7230FDBBE00B701B4 /* SwiftUI_Core_Data.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744749D4230FE01C00B701B4 /* PersonCellModel.swift in Sources */,
 				744749B9230FDBBE00B701B4 /* SwiftUI_Core_Data.xcdatamodeld in Sources */,
 				744749B4230FDBBE00B701B4 /* AppDelegate.swift in Sources */,
+				744749DC230FFB1400B701B4 /* AddNewPerson.swift in Sources */,
+				744749CD230FDC4000B701B4 /* Person+CoreDataProperties.swift in Sources */,
+				744749D8230FE2D900B701B4 /* PersonsModel.swift in Sources */,
+				744749D0230FDDBC00B701B4 /* ImagePicker.swift in Sources */,
+				744749CC230FDC4000B701B4 /* Person+CoreDataClass.swift in Sources */,
 				744749BB230FDBBE00B701B4 /* ContentView.swift in Sources */,
 				744749B6230FDBBE00B701B4 /* SceneDelegate.swift in Sources */,
 			);
