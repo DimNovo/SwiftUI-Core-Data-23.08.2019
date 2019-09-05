@@ -35,8 +35,8 @@ struct AddNewPerson: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Picker(selection: $selectedSegment, label: Text("")) {
-                Text("male")
-                Text("female")
+                Text("male").tag(0)
+                Text("female").tag(1)
             }
             .padding()
             .shadow(color: .secondary, radius: 3)

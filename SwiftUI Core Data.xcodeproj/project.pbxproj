@@ -20,6 +20,8 @@
 		744749D4230FE01C00B701B4 /* PersonCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749D3230FE01C00B701B4 /* PersonCellModel.swift */; };
 		744749D8230FE2D900B701B4 /* PersonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749D7230FE2D900B701B4 /* PersonsModel.swift */; };
 		744749DC230FFB1400B701B4 /* AddNewPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744749DB230FFB1400B701B4 /* AddNewPerson.swift */; };
+		74A3890323216F2400495784 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3890223216F2400495784 /* UIImage+Extension.swift */; };
+		74A389052321718D00495784 /* UpdatePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A389042321718D00495784 /* UpdatePerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		744749D3230FE01C00B701B4 /* PersonCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellModel.swift; sourceTree = "<group>"; };
 		744749D7230FE2D900B701B4 /* PersonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsModel.swift; sourceTree = "<group>"; };
 		744749DB230FFB1400B701B4 /* AddNewPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPerson.swift; sourceTree = "<group>"; };
+		74A3890223216F2400495784 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		74A389042321718D00495784 /* UpdatePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePerson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		744749B2230FDBBE00B701B4 /* SwiftUI Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				74A3890123216F0E00495784 /* Extension */,
 				744749B3230FDBBE00B701B4 /* AppDelegate.swift */,
 				744749B5230FDBBE00B701B4 /* SceneDelegate.swift */,
 				744749CE230FDC5F00B701B4 /* Service+CoreData */,
@@ -124,6 +129,7 @@
 				744749D3230FE01C00B701B4 /* PersonCellModel.swift */,
 				744749D7230FE2D900B701B4 /* PersonsModel.swift */,
 				744749DB230FFB1400B701B4 /* AddNewPerson.swift */,
+				74A389042321718D00495784 /* UpdatePerson.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +140,14 @@
 				744749B7230FDBBE00B701B4 /* SwiftUI_Core_Data.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		74A3890123216F0E00495784 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				74A3890223216F2400495784 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +228,10 @@
 				744749CD230FDC4000B701B4 /* Person+CoreDataProperties.swift in Sources */,
 				744749D8230FE2D900B701B4 /* PersonsModel.swift in Sources */,
 				744749D0230FDDBC00B701B4 /* ImagePicker.swift in Sources */,
+				74A389052321718D00495784 /* UpdatePerson.swift in Sources */,
 				744749CC230FDC4000B701B4 /* Person+CoreDataClass.swift in Sources */,
 				744749BB230FDBBE00B701B4 /* ContentView.swift in Sources */,
+				74A3890323216F2400495784 /* UIImage+Extension.swift in Sources */,
 				744749B6230FDBBE00B701B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ struct PersonsModel: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(fetchRequest: Person.fetchRequest()) var persons: FetchedResults<Person>
     
+    @State private var isActive = false
     @State private var addImage = false
     @State private var addPerson = false
     @State private var image: UIImage?
@@ -21,6 +22,29 @@ struct PersonsModel: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var age = ""
+    
+    fileprivate func displayPersons() -> some View {
+        return ForEach(persons, id: \.id) { person in
+            NavigationLink(destination: UpdatePerson(personToUpdate: person, isActive: self.$isActive)) {
+                VStack {
+                    PersonCellModel(
+                    image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
+                    favImage: Image(systemName: person.isFavorite ? "star.fill" : "star"),
+                    gender: person.gender ?? "...",
+                    firstName: person.firstName ?? "...",
+                    lastName: person.lastName ?? "...",
+                    age: person.age ?? "...")
+                    Text(self.isActive ? "" : "")
+                }
+            }
+        }
+        .onDelete { IndexSet in
+            guard 0 < self.persons.count else { return }
+            self.managedObjectContext.delete(self.persons[IndexSet.first!])
+            do { try self.managedObjectContext.save()}
+            catch { print(error, error.localizedDescription)}
+        }
+    }
     
     var body: some View {
         VStack {
@@ -34,20 +58,7 @@ struct PersonsModel: View {
                 }
             }
             List {
-                ForEach(persons, id: \.id) { person in
-                    PersonCellModel(
-                        image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
-                        favImage: Image(systemName: person.isFavorite ? "star.fill" : "star"),
-                        gender: person.gender ?? "...",
-                        firstName: person.firstName ?? "...",
-                        lastName: person.lastName ?? "...",
-                        age: person.age ?? "...")
-                }.onDelete { IndexSet in
-                    guard 0 < self.persons.count else { return }
-                    self.managedObjectContext.delete(self.persons[IndexSet.first!])
-                    do { try self.managedObjectContext.save()}
-                    catch { print(error, error.localizedDescription)}
-                }
+                displayPersons()
             }
         }
         .sheet(isPresented: self.$addPerson, onDismiss: {
@@ -66,7 +77,7 @@ struct PersonsModel: View {
             { personMOC.gender = "female" }
             
             personMOC.isFavorite = self.isFavorite
-            personMOC.photoData = self.image?.pngData()
+            if let imageToData = self.image?.toJpegCompressedData { personMOC.photoData = imageToData }
             
             do { try self.managedObjectContext.save()}
             catch { print(error, error.localizedDescription)}
