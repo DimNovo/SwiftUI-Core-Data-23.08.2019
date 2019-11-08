@@ -41,7 +41,7 @@ struct UpdatePerson: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             VStack {
-                Image(uiImage: UIImage(data: personToUpdate.photoData!)!)
+                Image(uiImage: (self.personToUpdate.photoData != nil ? UIImage(data: personToUpdate.photoData!) : UIImage().placeholderImage)!)
                     .resizable()
                     .clipShape(Circle())
                     .frame(width: 250, height: 250)
@@ -63,12 +63,12 @@ struct UpdatePerson: View {
                     Text("male").tag(0)
                     Text("female").tag(1)
                 }
-                    .shadow(color: .init(.cyan), radius: 0)
-                    .pickerStyle(SegmentedPickerStyle())
+                .shadow(color: .init(.cyan), radius: 0)
+                .pickerStyle(SegmentedPickerStyle())
                 
                 Image(systemName: isFavorite ? "star.fill" : "star")
-                .resizable()
-                .frame(width: 50, height: 50)
+                    .resizable()
+                    .frame(width: 50, height: 50)
                     .foregroundColor(.yellow)
                     .shadow(color: isFavorite ? .primary : .secondary, radius: 3)
                     .onTapGesture {  self.isFavorite.toggle() }

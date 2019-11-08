@@ -24,16 +24,16 @@ struct PersonsModel: View {
     @State private var age = ""
     
     fileprivate func displayPersons() -> some View {
-        return ForEach(persons, id: \.id) { person in
+        return ForEach(persons) { person in
             NavigationLink(destination: UpdatePerson(personToUpdate: person, isActive: self.$isActive)) {
                 VStack {
                     PersonCellModel(
-                    image: Image(uiImage: UIImage(data: person.photoData!) ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
-                    favImage: Image(systemName: person.isFavorite ? "star.fill" : "star"),
-                    gender: person.gender ?? "...",
-                    firstName: person.firstName ?? "...",
-                    lastName: person.lastName ?? "...",
-                    age: person.age ?? "...")
+                        image: Image(uiImage: (person.photoData != nil ? UIImage(data: person.photoData!) : UIImage().placeholderImage)!),
+                        favImage: Image(systemName: person.isFavorite ? "star.fill" : "star"),
+                        gender: person.gender ?? "...",
+                        firstName: person.firstName ?? "...",
+                        lastName: person.lastName ?? "...",
+                        age: person.age ?? "...")
                     Text(self.isActive ? "" : "")
                 }
             }
@@ -86,7 +86,7 @@ struct PersonsModel: View {
             self.firstName = ""
             self.lastName = ""
             self.age = ""
-            self.image = UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))
+            self.image = self.image?.placeholderImage
             
         }) { AddNewPerson(image: self.$image,
                           selectedSegment: self.$selectedSegment,

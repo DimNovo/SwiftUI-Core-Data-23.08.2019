@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PersonCellModel: View {
     
-    var image: Image
+    var image: Image 
     var favImage: Image
     var gender = ""
     var firstName = ""
@@ -73,7 +73,7 @@ struct PersonCellModel: View {
 struct PersonCellModel_Previews: PreviewProvider {
     static var previews: some View {
         PersonCellModel(
-            image: Image(uiImage: UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!),
+            image: Image(uiImage: UIImage().placeholderImage),
             favImage: Image(systemName: "star")
         )
     }

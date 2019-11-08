@@ -12,4 +12,9 @@ extension UIImage {
     var toJpegCompressedData: Data? {
         return jpegData(compressionQuality: 0.0)
     }
+    
+    var placeholderImage: UIImage {
+        return UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!
+    }
 }
+

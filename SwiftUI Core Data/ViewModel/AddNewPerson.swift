@@ -20,7 +20,7 @@ struct AddNewPerson: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: image ?? UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))!)
+            Image(uiImage: image ?? UIImage().placeholderImage)
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
@@ -44,7 +44,7 @@ struct AddNewPerson: View {
             
             Image(systemName: isFavorite ? "star.fill" : "star")
                 .resizable()
-            .frame(width: 50, height: 50)
+                .frame(width: 50, height: 50)
                 .foregroundColor(.yellow)
                 .shadow(color: isFavorite ? .primary : .secondary, radius: 3)
                 .onTapGesture { self.isFavorite.toggle()}
@@ -53,13 +53,13 @@ struct AddNewPerson: View {
         }
         .sheet(isPresented: self.$addImage)
         { ImagePicker(showImagePicker: self.$addImage, image: self.$image)}
-        .padding()
+            .padding()
     }
 }
 
 struct AddNewPerson_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewPerson(image: .constant(UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 100, weight: .regular))),
+        AddNewPerson(image: .constant(UIImage().placeholderImage),
                      selectedSegment: .constant(0),
                      firstName: .constant("bob"),
                      lastName: .constant("rob"),
